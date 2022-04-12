@@ -150,6 +150,37 @@
   <div v-else id="modal-1" title="Reject Client">
     <p class="my-4">This client is Bad. This is based on our accuracy of 99.80%. We reccommend that you reject the client</p>
   </div>
+  <div style="width: 100%; display: table;">
+    <div style="display: table-row; height: 100px;">
+        <div style="width: 50%; display: table-cell">
+          <p><strong>Persona of a good customer:</strong></p>
+          <p>Age: Below 47</p>
+          <p>Marriage Status: Married</p>
+          <p>Housing Type: House/Apartment</p>
+          <p>Income Type: Working</p>
+          <p>Occupation: Others/Prefer not to say</p>
+          <p>Education: Academic Degree</p>
+          <p>Days Employed: Employed more than 2 years</p>
+          <p>Realty: Yes</p>
+          <p>Total Yearly Income : More than 50,000</p>
+          <p>Count of family members: More than 2</p>
+        </div>
+        <div style="display: table-cell"> 
+          <p><strong>General persona of a bad customer:</strong></p>
+          <p>Age: Above 47</p>
+          <p>Marriage Status: Single/ Separated</p>
+          <p>Housing Type: Office Apartment</p>
+          <p>Income Type: Working/Commercial Associate</p>
+          <p>Occupation: Others/Prefer not to say</p>
+          <p>Education: Secondary/Higher Education</p>
+          <p>Days Employed: Unemployed</p>
+          <p>Realty: No</p>
+          <p>Total Yearly Income : Less than 90,000</p>
+          <p>Count of family members: Less than 2</p>
+        </div>
+    </div>
+  </div>
+  </div>
 </div>
 </div>
 <script>
@@ -212,67 +243,9 @@ var app = new Vue({
         });
     }
   }
-  // ,
-  // created: function () {
-  //     // on Vue instance created, load predictions
-  //     this.getPredictions();
-  // }
 })
 </script>
-<!-- 
-<script>
-  var prediction_url = "http://127.0.0.1:5003/predict"
-</script> -->
 
-<!-- <script>
-  var prediction_url = "http://127.0.0.1:5003/predict";
-
-  var app = new Vue({
-    el: "#app",
-    delimiters: ['${', '}'],
-    data: {
-      current: {},
-      hourly: [],
-      daily: [],
-      d: 'table-danger',
-      w: 'table-warning',
-      s: 'table-success'
-    },
-    methods: {
-      getPredictions: function () {
-          // on Vue instance created, load the book list
-          const response =
-              fetch(prediction_url)
-                  .then(response => response.json())
-                  .then(data => {
-                      // console.log(response);
-                      console.log(data.data);
-                      if (data.code === 404) {
-                          // no book in db
-                          this.message = data.message;
-                      } else {
-                        this.daily = data.data.daily;
-                        this.current = data.data.current;
-                        this.hourly = data.data.hourly;
-                        console.log(this.daily);
-                      }
-                  })
-                  .catch(error => {
-                      // Errors when calling the service; such as network error, 
-                      // service offline, etc
-                      console.log(this.message + error);
-
-                  });
-
-      }
-    },
-    created: function () {
-        // on Vue instance created, load predictions
-        this.getPredictions();
-    }
-  }) -->
-
-<!-- </script> -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
